@@ -4,10 +4,10 @@ import { ImageReveal, Reveal } from '@/components/motion-primitives';
 import { SiteHeader } from '@/components/site-header';
 
 const pizzas = [
-  { name: 'Margherita Sikalafa', description: 'San Marzano tomato, fior di latte, basil, olive oil', price: '38' },
-  { name: 'Bosco', description: 'Fior di latte, mushrooms, artichoke, roasted pepper, rocket', price: '47' },
-  { name: 'Piccante', description: 'Tomato, spicy salami, nduja, red onion, honey', price: '49' },
-  { name: 'Bianca', description: 'Ricotta, fior di latte, potato, rosemary, pecorino', price: '46' },
+  { name: 'Margherita Sikalafa', description: 'Pomidory San Marzano, fior di latte, bazylia, oliwa', price: '38' },
+  { name: 'Bosco', description: 'Fior di latte, pieczarki, karczochy, pieczona papryka, rukola', price: '47' },
+  { name: 'Piccante', description: 'Pomidory, pikantne salami, nduja, czerwona cebula, miód', price: '49' },
+  { name: 'Bianca', description: 'Ricotta, fior di latte, ziemniaki, rozmaryn, pecorino', price: '46' },
 ];
 
 export default function Home() {
@@ -17,47 +17,47 @@ export default function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-image">
-          <Image src="/sikalafa-hero.png" alt="Sikalafa pizzeria glowing warmly at night" fill priority sizes="100vw" />
+          <Image src="/sikalafa-hero.png" alt="Pizzeria Sikalafa rozświetlona ciepłym światłem nocą" fill priority sizes="100vw" />
         </div>
         <div className="hero-shade" />
         <div className="hero-copy">
-          <p className="eyebrow">Wrocław · pizza, wine &amp; good company</p>
-          <h1 id="hero-title">Come for pizza.<br /><em>Stay for a while.</em></h1>
-          <p className="hero-intro">A little house with a big heart — handmade pizza, candlelit tables and evenings that take their time.</p>
+          <p className="eyebrow">Wrocław · pizza, wino i dobre towarzystwo</p>
+          <h1 id="hero-title">Przyjdź na pizzę.<br /><em>Zostań na dłużej.</em></h1>
+          <p className="hero-intro">Mały lokal z wielkim sercem — ręcznie robiona pizza, stoliki w blasku świec i wieczory, którym się nie spieszy.</p>
           <div className="hero-actions">
-            <a className="text-link" href="#menu">See the menu <ArrowUpRight aria-hidden="true" /></a>
-            <a className="text-link" href="#reservations">Reserve a table <ArrowUpRight aria-hidden="true" /></a>
+            <a className="text-link" href="#menu">Zobacz menu <ArrowUpRight aria-hidden="true" /></a>
+            <a className="text-link" href="#reservations">Zarezerwuj stolik <ArrowUpRight aria-hidden="true" /></a>
           </div>
         </div>
-        <p className="hero-note" aria-hidden="true">No rush.<br />You&apos;re home.</p>
-        <a className="scroll-mark" href="#story" aria-label="Scroll to our story"><span>Scroll</span><i /><ArrowDown aria-hidden="true" /></a>
+        <p className="hero-note" aria-hidden="true">Bez pośpiechu.<br />Czuj się jak u siebie.</p>
+        <a className="scroll-mark" href="#story" aria-label="Przejdź do naszej historii"><span>Przewiń</span><i /><ArrowDown aria-hidden="true" /></a>
       </section>
 
       <section className="story section-shell" id="story">
         <Reveal className="story-heading">
-          <p className="section-kicker">01 · Our story</p>
-          <h2>It started with<br />a table <em>for friends.</em></h2>
+          <p className="section-kicker">01 · Nasza historia</p>
+          <h2>Zaczęło się od<br />stołu <em>dla przyjaciół.</em></h2>
         </Reveal>
         <Reveal className="story-copy">
-          <p className="lead-copy">Sikalafa was never meant to feel like a restaurant. It&apos;s a place to settle in, share a pizza and forget to check the time.</p>
-          <p>Everything here is personal: the dough we tend to each day, the records behind the bar, the plants finding their way across old shelves. The room grew slowly, one found chair and one story at a time.</p>
-          <p className="hand-note">Made by hand.<br />Best shared together.</p>
+          <p className="lead-copy">Sikalafa nigdy nie miała być zwykłą restauracją. To miejsce, w którym można usiąść wygodnie, dzielić się pizzą i zapomnieć o czasie.</p>
+          <p>Tu wszystko jest osobiste: ciasto, o które dbamy każdego dnia, płyty za barem i rośliny oplatające stare półki. Lokal powstawał powoli — jedno znalezione krzesło i jedna historia po drugiej.</p>
+          <p className="hand-note">Robione ręcznie.<br />Najlepiej smakuje razem.</p>
         </Reveal>
       </section>
 
       <section className="pizza-feature" id="pizza">
-        <ImageReveal src="/sikalafa-pizza.png" alt="Fresh Sikalafa pizza served with wine by candlelight" className="pizza-photo" position="63% center" />
+        <ImageReveal src="/sikalafa-pizza.png" alt="Świeża pizza Sikalafa podana z winem przy blasku świecy" className="pizza-photo" position="63% center" />
         <div className="pizza-panel">
           <Reveal>
-            <p className="section-kicker">02 · The pizza</p>
-            <h2>Simple things,<br /><em>done properly.</em></h2>
-            <p>Long-fermented dough. A blistered, airy crust. Thoughtful ingredients and combinations that change with the season.</p>
+            <p className="section-kicker">02 · Pizza</p>
+            <h2>Proste rzeczy,<br /><em>zrobione jak należy.</em></h2>
+            <p>Długo dojrzewające ciasto. Lekki, wyrośnięty rant. Starannie dobrane składniki i połączenia, które zmieniają się wraz z porami roku.</p>
             <dl className="pizza-facts">
-              <div><dt>48h</dt><dd>slow fermentation</dd></div>
-              <div><dt>450°</dt><dd>a very hot oven</dd></div>
-              <div><dt>100%</dt><dd>made by us</dd></div>
+              <div><dt>48h</dt><dd>powolnej fermentacji</dd></div>
+              <div><dt>450°</dt><dd>bardzo gorący piec</dd></div>
+              <div><dt>100%</dt><dd>robimy na miejscu</dd></div>
             </dl>
-            <a className="text-link dark-link" href="#menu">Explore our favourites <ArrowUpRight aria-hidden="true" /></a>
+            <a className="text-link dark-link" href="#menu">Poznaj nasze ulubione <ArrowUpRight aria-hidden="true" /></a>
           </Reveal>
         </div>
       </section>
@@ -65,20 +65,20 @@ export default function Home() {
       <section className="place" id="place">
         <div className="place-copy section-shell">
           <Reveal>
-            <p className="section-kicker">03 · The place</p>
-            <h2>A room with<br /><em>its own rhythm.</em></h2>
-            <p>Low lights, well-worn wood and music playing just loud enough. Every corner has something to discover, but the best part is always the people around your table.</p>
+            <p className="section-kicker">03 · Lokal</p>
+            <h2>Miejsce z<br /><em>własnym rytmem.</em></h2>
+            <p>Przygaszone światło, drewno z historią i muzyka grająca w sam raz. W każdym kącie można coś odkryć, ale najważniejsi są zawsze ludzie przy Twoim stole.</p>
           </Reveal>
         </div>
-        <ImageReveal src="/sikalafa-interior.png" alt="The warm, plant-filled interior of Sikalafa" className="place-photo" />
-        <p className="place-caption">Pull up a chair<br />and make it yours.</p>
+        <ImageReveal src="/sikalafa-interior.png" alt="Ciepłe, pełne roślin wnętrze Sikalafa" className="place-photo" />
+        <p className="place-caption">Przysuń krzesło.<br />Rozgość się.</p>
       </section>
 
       <section className="menu-section section-shell" id="menu">
         <Reveal className="menu-intro">
-          <p className="section-kicker">04 · A few favourites</p>
-          <h2>What&apos;s on<br /><em>the table.</em></h2>
-          <p>Our menu moves with the seasons and our mood. Here are a few pizzas we keep coming back to.</p>
+          <p className="section-kicker">04 · Kilka ulubionych</p>
+          <h2>Co dziś<br /><em>na stole.</em></h2>
+          <p>Nasze menu zmienia się razem z porami roku i naszym nastrojem. Oto kilka pizz, do których stale wracamy.</p>
         </Reveal>
         <div className="menu-list">
           {pizzas.map((pizza, index) => (
@@ -88,43 +88,43 @@ export default function Home() {
               <span className="menu-price">{pizza.price} zł</span>
             </Reveal>
           ))}
-          <p className="menu-note">Ask us about today&apos;s specials, natural wines and something sweet.</p>
+          <p className="menu-note">Zapytaj nas o dzisiejsze specjały, naturalne wina i coś słodkiego.</p>
         </div>
       </section>
 
       <section className="experience" id="experience">
-        <ImageReveal src="/sikalafa-evening.png" alt="A candlelit table set for an evening at Sikalafa" className="experience-photo" position="70% center" />
+        <ImageReveal src="/sikalafa-evening.png" alt="Stół w blasku świec przygotowany na wieczór w Sikalafa" className="experience-photo" position="70% center" />
         <div className="experience-shade" />
         <Reveal className="experience-copy">
-          <p className="section-kicker">05 · The evening</p>
-          <h2>Let the night<br /><em>take its time.</em></h2>
-          <p>Come hungry. Bring someone you like. We&apos;ll take care of the rest.</p>
-          <a className="text-link" href="#reservations">Find your table <ArrowUpRight aria-hidden="true" /></a>
+          <p className="section-kicker">05 · Wieczór</p>
+          <h2>Niech wieczór<br /><em>płynie swoim rytmem.</em></h2>
+          <p>Przyjdź głodny. Zabierz kogoś, kogo lubisz. Resztą zajmiemy się my.</p>
+          <a className="text-link" href="#reservations">Znajdź swój stolik <ArrowUpRight aria-hidden="true" /></a>
         </Reveal>
       </section>
 
       <section className="reservations section-shell" id="reservations">
         <Reveal className="reservation-heading">
-          <p className="section-kicker">Come by</p>
-          <h2>Your table<br /><em>is waiting.</em></h2>
+          <p className="section-kicker">Wpadnij do nas</p>
+          <h2>Twój stolik<br /><em>już czeka.</em></h2>
         </Reveal>
         <Reveal className="visit-details">
           <div className="visit-row">
             <MapPin aria-hidden="true" />
-            <div><span>Find us</span><p>Wrocław, Poland</p></div>
+            <div><span>Znajdziesz nas</span><p>Wrocław, Polska</p></div>
           </div>
           <div className="visit-row">
             <Clock3 aria-hidden="true" />
-            <div><span>Opening hours</span><p>Tuesday — Sunday<br />from 16:00 until late</p></div>
+            <div><span>Godziny otwarcia</span><p>Wtorek — niedziela<br />od 16:00 do późna</p></div>
           </div>
-          <a className="reservation-button" href="tel:+48532997669">Call to reserve <span>+48 532 997 669</span></a>
+          <a className="reservation-button" href="tel:+48532997669">Zadzwoń i zarezerwuj <span>+48 532 997 669</span></a>
         </Reveal>
       </section>
 
       <footer>
         <a className="footer-mark" href="#top">Sikalafa <span>Pizzeria</span></a>
-        <p>Pizza, people &amp; good times.</p>
-        <a href="#top" className="back-top">Back to top ↑</a>
+        <p>Pizza, ludzie i dobre chwile.</p>
+        <a href="#top" className="back-top">Wróć na górę ↑</a>
       </footer>
     </main>
   );
