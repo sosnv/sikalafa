@@ -5,11 +5,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const navigation = [
-  ['Historia', '#story'],
-  ['Pizza', '#pizza'],
-  ['Lokal', '#place'],
+  ['O nas', '#about'],
   ['Menu', '#menu'],
-  ['Atmosfera', '#experience'],
+  ['Pizza miesiąca', '#month'],
+  ['Dostawa', '#delivery'],
+  ['Kontakt', '#contact'],
 ];
 
 export function SiteHeader() {
@@ -27,13 +27,13 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label="Sikalafa — strona główna">
-        Sikalafa <span>Pizzeria</span>
+      <a className="wordmark" href="#top" aria-label="Sikalafą — strona główna">
+        Sikalafą <span>Pizzeria</span>
       </a>
       <nav aria-label="Główna nawigacja">
         {navigation.slice(0, 4).map(([label, href]) => <a key={href} href={href}>{label}</a>)}
       </nav>
-      <a className="header-cta" href="#reservations">Rezerwacje</a>
+      <a className="header-cta" href="tel:+48532997669">Zamów: 532 997 669</a>
       <button className="menu-toggle" aria-label="Otwórz menu" aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(true)}>
         <Menu aria-hidden="true" />
       </button>
@@ -42,7 +42,7 @@ export function SiteHeader() {
         {open && (
           <motion.dialog id="mobile-navigation" className="mobile-nav" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} open aria-modal="true" aria-label="Menu mobilne">
             <button className="mobile-nav-close" aria-label="Zamknij menu" onClick={() => setOpen(false)}><X aria-hidden="true" /></button>
-            <div className="mobile-nav-mark">Sikalafa <span>Pizzeria</span></div>
+            <div className="mobile-nav-mark">Sikalafą <span>Pizzeria</span></div>
             <nav aria-label="Nawigacja mobilna">
               {navigation.map(([label, href], index) => (
                 <motion.a
@@ -55,7 +55,7 @@ export function SiteHeader() {
                 >{label}</motion.a>
               ))}
             </nav>
-            <a className="mobile-reserve" href="#reservations" onClick={() => setOpen(false)}>Zarezerwuj stolik</a>
+            <a className="mobile-reserve" href="tel:+48532997669" onClick={() => setOpen(false)}>Zamów: 532 997 669</a>
           </motion.dialog>
         )}
       </AnimatePresence>
