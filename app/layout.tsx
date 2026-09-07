@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sikalafa-pizzeria.light-fir-8078.chatgpt.site'),
+  metadataBase: new URL('https://sikalafa-pizzeria.sosnvdawg.chatgpt.site'),
   title: 'Sikalafa Pizzeria | Pizza, ludzie i dobre chwile',
   description: 'Kameralna pizzeria z duszą we Wrocławiu. Ręcznie robiona pizza, ciepłe wieczory i dobre towarzystwo.',
   openGraph: {
