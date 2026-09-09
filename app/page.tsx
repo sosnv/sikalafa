@@ -13,37 +13,8 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { ImageReveal, Reveal } from '@/components/motion-primitives';
+import { MenuGallery } from '@/components/menu-gallery';
 import { SiteHeader } from '@/components/site-header';
-
-const pizzaItems = [
-  ['Margherita', 'Klasyczna pizza z sosem pomidorowym i serem.'],
-  ['Capricciosa', 'Klasyczna kompozycja pełna dobrze znanych smaków.'],
-  ['Quattro Formaggi', 'Dla miłośników intensywnego, serowego smaku.'],
-  ['Mascarpone', 'Sos pomidorowy, mozzarella i gouda, mascarpone, szpinak oraz suszone pomidory.'],
-  ['Carbonara', 'Pizza inspirowana jednym z najbardziej znanych włoskich makaronów.'],
-  ['Parma', 'Wyrazista pizza z włoskimi akcentami.'],
-  ['Chorizo', 'Propozycja dla osób lubiących intensywniejsze smaki.'],
-  ['Bolognese', 'Pizza inspirowana klasycznym sosem bolońskim.'],
-  ['Sikalafą', 'Nasza firmowa kompozycja.'],
-];
-
-const pastaItems = [
-  'Spaghetti Bolognese',
-  'Spaghetti Carbonara',
-  'Penne Quattro Formaggi',
-  'Penne Quattro Formaggi e Pollo',
-  'Penne Sikalafą',
-  'Penne con pollo e spinaci',
-  'Penne con pollo e gorgonzola',
-  'Penne con gamberetti e spinaci',
-];
-
-const saladItems = [
-  ['Sałatka Sikalafą', 'Pomidorki koktajlowe, camembert, mandarynka, orzechy, pestki i żurawina.'],
-  ['Z grillowanym kurczakiem', 'Świeża, sycąca i przygotowywana na bieżąco.'],
-  ['Z tuńczykiem', 'Lekka propozycja z wyrazistymi dodatkami.'],
-  ["A'la grecka", 'Klasyczne, świeże smaki w lekkim wydaniu.'],
-];
 
 const monthlyIngredients = [
   'kaszanka',
@@ -127,45 +98,7 @@ export default function Home() {
           <p>Od dobrze znanych klasyków po nasze własne kompozycje. Wszystko przygotowujemy na bieżąco, z dbałością o smak i jakość.</p>
         </Reveal>
 
-        <article className="food-category pizza-category">
-          <ImageReveal src="/menu-pizza.png" alt="Pizza na cienkim cieście" className="category-photo" />
-          <Reveal className="category-copy">
-            <p className="category-number">01</p>
-            <h3>Pizza</h3>
-            <p className="category-lead">Cienkie ciasto, sos pomidorowy, ser i starannie dobrane dodatki.</p>
-            <div className="dish-grid pizza-list">
-              {pizzaItems.map(([name, description]) => (
-                <div className="dish" key={name}><h4>{name}</h4><p>{description}</p></div>
-              ))}
-            </div>
-          </Reveal>
-        </article>
-
-        <article className="food-category reverse pasta-category">
-          <ImageReveal src="/menu-pasta.png" alt="Kremowy makaron penne z kurczakiem i szpinakiem" className="category-photo" />
-          <Reveal className="category-copy">
-            <p className="category-number">02</p>
-            <h3>Makarony</h3>
-            <p className="category-lead">Kremowe, pomidorowe i serowe sosy — od włoskich klasyków po nasze autorskie propozycje.</p>
-            <div className="simple-dish-list">
-              {pastaItems.map((name) => <p key={name}>{name}</p>)}
-            </div>
-          </Reveal>
-        </article>
-
-        <article className="food-category salad-category">
-          <ImageReveal src="/menu-salad.png" alt="Sałatka Sikalafą z camembertem, mandarynką i żurawiną" className="category-photo" />
-          <Reveal className="category-copy">
-            <p className="category-number">03</p>
-            <h3>Sałatki</h3>
-            <p className="category-lead">Świeże, lekkie i pełne różnorodnych dodatków.</p>
-            <div className="dish-grid">
-              {saladItems.map(([name, description]) => (
-                <div className="dish" key={name}><h4>{name}</h4><p>{description}</p></div>
-              ))}
-            </div>
-          </Reveal>
-        </article>
+        <MenuGallery />
       </section>
 
       <section className="monthly" id="month">
