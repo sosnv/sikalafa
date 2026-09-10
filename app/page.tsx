@@ -6,7 +6,6 @@ import {
   Check,
   Clock3,
   CreditCard,
-  Mail,
   MapPin,
   Phone,
   ShoppingBag,
@@ -14,6 +13,8 @@ import {
 } from 'lucide-react';
 import { ImageReveal, Reveal } from '@/components/motion-primitives';
 import { MenuGallery } from '@/components/menu-gallery';
+import { HeroSlider } from '@/components/hero-slider';
+import { PhotoGallery } from '@/components/photo-gallery';
 import { SiteHeader } from '@/components/site-header';
 
 const monthlyIngredients = [
@@ -52,15 +53,7 @@ export default function Home() {
       <SiteHeader />
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-image">
-          <Image
-            src="/sikalafa-hero.png"
-            alt="Pizza, makaron i sałatka przygotowane w Pizzerii Sikalafą"
-            fill
-            priority
-            sizes="100vw"
-          />
-        </div>
+        <HeroSlider />
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow">Białe Błota · pizza · makarony · sałatki</p>
@@ -87,9 +80,11 @@ export default function Home() {
       </section>
 
       <section className="about-visual" aria-label="Wnętrze Pizzerii Sikalafą">
-        <ImageReveal src="/sikalafa-interior.png" alt="Przytulne wnętrze lokalnej pizzerii" className="about-photo" />
+        <ImageReveal src="/about-pizza-craft.webp" alt="Pizzaiolo ręcznie przygotowujący cienkie ciasto na pizzę" className="about-photo" position="center 52%" />
         <p className="about-visual-note">Dobre jedzenie.<br />Dobre spotkania.</p>
       </section>
+
+      <PhotoGallery />
 
       <section className="food-menu section-shell" id="menu">
         <Reveal className="menu-heading">
@@ -120,6 +115,7 @@ export default function Home() {
         <Reveal className="order-heading">
           <p className="section-kicker">04 · Zamówienia</p>
           <h2>Na miejscu,<br /><em>z odbiorem lub dostawą.</em></h2>
+          <ImageReveal src="/images/gallery/2.webp" alt="Słodkie calzone podane z kawą" className="section-accent-photo order-photo" position="center" />
         </Reveal>
         <Reveal className="order-details">
           <p>Masz ochotę na pizzę, makaron lub sałatkę? Zadzwoń — przygotujemy Twoje zamówienie z odbiorem osobistym albo dostawą.</p>
@@ -128,7 +124,11 @@ export default function Home() {
             <div><Bike aria-hidden="true" /><span>Dostawa od 50 zł<br /><small>+ koszt dostawy</small></span></div>
             <div><CreditCard aria-hidden="true" /><span>Karta i BLIK<br /><small>w lokalu i przy dostawie</small></span></div>
           </div>
-          <a className="order-phone" href="tel:+48532997669"><span>Zamów telefonicznie</span>532 997 669 <ArrowUpRight aria-hidden="true" /></a>
+          <a className="order-phone" href="tel:+48532997669">
+            <span className="order-phone-label">Zamów telefonicznie</span>
+            <strong>532 997 669</strong>
+            <span className="order-phone-icon"><ArrowUpRight aria-hidden="true" /></span>
+          </a>
         </Reveal>
       </section>
 
@@ -137,11 +137,12 @@ export default function Home() {
           <p className="section-kicker">05 · Dostawa</p>
           <h2>Dowieziemy<br /><em>prosto do Ciebie.</em></h2>
         </Reveal>
+        <ImageReveal src="/images/gallery/3.webp" alt="Świeża sałatka przygotowana w Pizzerii Sikalafą" className="section-wide-photo delivery-photo" position="center 58%" />
         <div className="delivery-zones">
           {deliveryZones.map((zone, index) => (
             <Reveal className="zone-card" key={zone.title}>
               <span className="zone-number">0{index + 1}</span>
-              <div className="zone-title"><h3>{zone.title}</h3><strong>{zone.price}</strong></div>
+              <div className="zone-title"><h3>{zone.title}</h3><strong className="price-value">{zone.price}</strong></div>
               <p>{zone.places}</p>
               <div className="zone-free"><Bike aria-hidden="true" />{zone.free}</div>
             </Reveal>
@@ -156,10 +157,18 @@ export default function Home() {
       <section className="promo section-shell" id="promo">
         <Reveal className="promo-copy">
           <p className="section-kicker">Aktualna promocja</p>
-          <h2>Dwie pizze zamawiasz.<br /><em>Trzecią jesz 50% taniej.</em></h2>
-          <p>Przy zamówieniu dwóch pizz możesz otrzymać trzecią pizzę Margherita z rabatem 50%. Zapytaj o szczegóły podczas składania zamówienia.</p>
+          <h2>Dwie pizze zamawiasz.<br /><em>Trzecią masz gratis.</em></h2>
+          <p>Przy zamówieniu dwóch pizz otrzymasz trzecią pizzę Margherita gratis. Zapytaj o szczegóły podczas składania zamówienia.</p>
+          <div className="promo-equation" aria-label="Dwie pizze plus jedna pizza gratis">
+            <span><strong>2</strong> zamawiasz</span>
+            <b aria-hidden="true">+</b>
+            <span><strong>1</strong> gratis</span>
+          </div>
         </Reveal>
-        <div className="promo-badge" aria-hidden="true"><strong>−50%</strong><span>na trzecią<br />Margheritę</span></div>
+        <Reveal className="promo-visual">
+          <Image src="/promo-three-pizzas.webp" alt="Dwie pizze oraz trzecia pizza Margherita gratis" width={1400} height={933} sizes="(max-width: 820px) 100vw, 48vw" />
+        </Reveal>
+        <div className="promo-badge" aria-hidden="true"><strong>Gratis</strong><span>trzecia<br />Margherita</span></div>
       </section>
 
       <section className="contact section-shell" id="contact">
@@ -167,6 +176,7 @@ export default function Home() {
           <p className="section-kicker">06 · Kontakt</p>
           <h2>Wpadnij albo<br /><em>zadzwoń.</em></h2>
         </Reveal>
+        <ImageReveal src="/images/gallery/6.webp" alt="Klimatyczne wnętrze Pizzerii Sikalafą" className="section-wide-photo contact-photo" position="center 52%" />
         <div className="contact-columns">
           <Reveal className="contact-card">
             <MapPin aria-hidden="true" />
@@ -195,23 +205,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="career section-shell" id="career">
-        <Reveal className="career-heading">
-          <p className="section-kicker">07 · Kariera</p>
-          <h2>Dołącz do<br /><em>naszego zespołu.</em></h2>
-          <p>Lubisz gotować i dobrze czujesz się w pracy zespołowej? Być może szukamy właśnie Ciebie.</p>
-        </Reveal>
-        <Reveal className="career-details">
-          <div className="qualities">
-            {['rzetelność', 'uczciwość', 'zaangażowanie', 'gotowość do nauki', 'dyspozycyjność', 'odporność na większy ruch'].map((quality) => <span key={quality}><Check aria-hidden="true" />{quality}</span>)}
-          </div>
-          <p>Doświadczenie w gastronomii będzie dodatkowym atutem. Oferujemy przyjazny zespół, elastyczny grafik, zniżki pracownicze oraz warunki zależne od doświadczenia i zaangażowania.</p>
-          <a className="primary-action dark-action" href="mailto:sikalafamanager@gmail.com?subject=CV%20%E2%80%94%20Pizzeria%20Sikalaf%C4%85"><Mail aria-hidden="true" /> Wyślij swoje CV</a>
-        </Reveal>
-      </section>
-
       <footer>
-        <div className="footer-brand"><a className="footer-mark" href="#top">Sikalafą <span>Pizzeria</span></a><p>Pizza · Makarony · Sałatki</p></div>
+        <div className="footer-brand"><a className="footer-mark" href="#top" aria-label="Pizzeria Sikalafą — wróć na górę"><Image src="/images/logo.png" alt="Pizzeria Sikalafą" width={1235} height={297} sizes="190px" /></a><p>Pizza · Makarony · Sałatki</p></div>
         <div className="footer-address"><MapPin aria-hidden="true" /><p>Szosa Szubińska 87<br />Białe Błota</p></div>
         <div className="footer-links"><a href="tel:+48532997669">Tel. 532 997 669</a><a href="mailto:sikalafamanager@gmail.com">Napisz do nas</a></div>
         <a href="#top" className="back-top">Wróć na górę ↑</a>

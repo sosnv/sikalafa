@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
@@ -7,8 +8,9 @@ import { Menu, X } from 'lucide-react';
 const navigation = [
   ['O nas', '#about'],
   ['Menu', '#menu'],
-  ['Pizza miesiąca', '#month'],
+  ['Galeria', '#gallery'],
   ['Dostawa', '#delivery'],
+  ['Pizza miesiąca', '#month'],
   ['Kontakt', '#contact'],
 ];
 
@@ -27,8 +29,8 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label="Sikalafą — strona główna">
-        Sikalafą <span>Pizzeria</span>
+      <a className="brand-logo" href="#top" aria-label="Pizzeria Sikalafą — strona główna">
+        <Image src="/images/logo.png" alt="Pizzeria Sikalafą" width={1235} height={297} priority sizes="205px" />
       </a>
       <nav aria-label="Główna nawigacja">
         {navigation.slice(0, 4).map(([label, href]) => <a key={href} href={href}>{label}</a>)}
@@ -42,7 +44,9 @@ export function SiteHeader() {
         {open && (
           <motion.dialog id="mobile-navigation" className="mobile-nav" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} open aria-modal="true" aria-label="Menu mobilne">
             <button className="mobile-nav-close" aria-label="Zamknij menu" onClick={() => setOpen(false)}><X aria-hidden="true" /></button>
-            <div className="mobile-nav-mark">Sikalafą <span>Pizzeria</span></div>
+            <div className="mobile-nav-mark">
+              <Image src="/images/logo.png" alt="Pizzeria Sikalafą" width={1235} height={297} sizes="170px" />
+            </div>
             <nav aria-label="Nawigacja mobilna">
               {navigation.map(([label, href], index) => (
                 <motion.a
